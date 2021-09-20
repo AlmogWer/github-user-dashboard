@@ -1,3 +1,5 @@
+import { GoMailRead } from "react-icons/go";
+
 export default {
   login: "AlmogWer",
   id: 87434394,
@@ -18,12 +20,12 @@ export default {
   type: "User",
   site_admin: false,
   name: "Almog Wertzberger",
-  company: null,
-  blog: "",
-  location: null,
-  email: null,
+  company: "Check-Point",
+  blog: "www.almogwerdev.com",
+  location: "Israel",
+  email: "Almogish@gmail.com",
   hireable: null,
-  bio: null,
+  bio: "I love React!👩🏽‍💻",
   twitter_username: null,
   public_repos: 45,
   public_gists: 0,
