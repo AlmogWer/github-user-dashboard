@@ -177,6 +177,7 @@ p {
   display: block;
   margin: 0 auto;
   margin-top: 10rem;
+  filter: hue-rotate(190deg);
 }
 main {
   padding-bottom: 2rem;
