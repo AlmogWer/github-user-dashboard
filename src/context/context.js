@@ -19,6 +19,7 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   //error
   const [error, setError] = useState({ show: false, msg: "" });
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const searchGithubUser = async (user) => {
     toggleError();
@@ -74,7 +75,15 @@ const GithubProvider = ({ children }) => {
   function toggleError(show = false, msg = "") {
     setError({ show, msg });
   }
-  //error
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.className = "dark-theme";
+    }
+  }, [isDarkMode]);
 
   useEffect(checkRequest, []);
   return (
@@ -87,6 +96,8 @@ const GithubProvider = ({ children }) => {
         error,
         searchGithubUser,
         isLoading,
+        toggleTheme,
+        isDarkMode,
       }}
     >
       {children}

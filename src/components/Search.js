@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md";
 import { GithubContext } from "../context/context";
 const Search = () => {
   const [user, setUser] = React.useState("");
-  const { requests, error, searchGithubUser, isLoading } =
+  const { requests, error, searchGithubUser, isLoading, isDarkMode } =
     React.useContext(GithubContext);
 
   //get things from global context
@@ -23,7 +23,13 @@ const Search = () => {
           </ErrorWrapper>
         )}
         <form onSubmit={handleSubmit}>
-          <div className="form-control">
+          <div
+            className={
+              isDarkMode
+                ? "form-control dark-theme-compo"
+                : "form-control light-theme-compo"
+            }
+          >
             <MdSearch />
             <input
               type="text"
@@ -54,7 +60,7 @@ const Wrapper = styled.div`
     }
   }
   .form-control {
-    background: var(--clr-white);
+    // background: var(--clr-white);
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr auto;
@@ -65,13 +71,9 @@ const Wrapper = styled.div`
       border-color: transparent;
       outline-color: var(--clr-grey-10);
       letter-spacing: var(--spacing);
-      color: var(--clr-grey-3);
+      // color: var(--clr-grey-3);
       padding: 0.25rem 0.5rem;
-    }
-    input::placeholder {
-      color: var(--clr-grey-3);
-      text-transform: capitalize;
-      letter-spacing: var(--spacing);
+      background: transparent;
     }
     button {
       border-radius: 5px;

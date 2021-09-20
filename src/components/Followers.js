@@ -3,11 +3,17 @@ import { GithubContext } from "../context/context";
 import styled from "styled-components";
 
 const Followers = () => {
-  const { followers } = React.useContext(GithubContext);
+  const { followers, isDarkMode } = React.useContext(GithubContext);
 
   return (
     <Wrapper>
-      <div className="followers">
+      <div
+        className={
+          isDarkMode
+            ? "followers dark-theme-compo "
+            : "followers light-theme-compo "
+        }
+      >
         {followers.map((follower, index) => {
           const { avatar_url: img, html_url, login } = follower;
           return (
@@ -26,10 +32,8 @@ const Followers = () => {
 };
 
 const Wrapper = styled.article`
-  background: var(--clr-white);
-  border-top-right-radius: var(--radius);
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  // background: var(--clr-white);
+
   position: relative;
 
   &::before {
@@ -38,15 +42,17 @@ const Wrapper = styled.article`
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
+
     color: var(--clr-grey-5);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
+
     text-transform: capitalize;
     padding: 0.5rem 1rem 0 1rem;
     letter-spacing: var(--spacing);
     font-size: 1rem;
   }
+
   .followers {
     overflow: scroll;
     height: 260px;
@@ -54,6 +60,22 @@ const Wrapper = styled.article`
     grid-template-rows: repeat(auto-fill, minmax(45px, 1fr));
     gap: 1.25rem 1rem;
     padding: 1rem 2rem;
+    border-radius: var(--radius);
+    overflow-x: hidden;
+  }
+  .followers::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  .followers::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+  }
+
+  .followers::-webkit-scrollbar-thumb {
+    background-color: var(--clr-grey-5);
+
+    border-radius: 1rem;
   }
   article {
     transition: var(--transition);

@@ -3,7 +3,8 @@ import { Info, Repos, User, Search, Navbar } from "../components";
 import loadingImage from "../images/preloader.gif";
 import { GithubContext } from "../context/context";
 const Dashboard = () => {
-  const { isLoading } = React.useContext(GithubContext);
+  const { isLoading, isDarkMode, toggleTheme } =
+    React.useContext(GithubContext);
   if (isLoading) {
     return (
       <main>
@@ -14,7 +15,7 @@ const Dashboard = () => {
     );
   }
   return (
-    <main>
+    <main className={isDarkMode ? "dark-theme" : "light-theme"}>
       <Navbar></Navbar>
       <Search></Search>
       <Info></Info>

@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { useAuth0 } from "@auth0/auth0-react";
+import { GithubContext } from "../context/context";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
+  const { isDarkMode, toggleTheme } = React.useContext(GithubContext);
   const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
     useAuth0();
   const isUser = isAuthenticated && user;
 
   return (
-    <Wrapper>
+    <Wrapper className={isDarkMode ? "dark-theme-compo" : null}>
       {isUser && user.picture && <img src={user.picture} alt={user.name} />}
       {isUser && user.name && (
         <h4>
@@ -26,6 +29,12 @@ const Navbar = () => {
       ) : (
         <button onClick={loginWithRedirect}>login</button>
       )}
+      <DarkModeToggle
+        size={80}
+        className="toggler"
+        onChange={toggleTheme}
+        checked={isDarkMode}
+      />
     </Wrapper>
   );
 };
@@ -33,10 +42,10 @@ const Navbar = () => {
 const Wrapper = styled.nav`
   padding: 1.5rem;
   margin-bottom: 4rem;
-  background: var(--clr-white);
+  background: white;
   text-align: center;
   display: grid;
-  grid-template-columns: auto auto 100px;
+  grid-template-columns: auto auto auto 100px;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -58,6 +67,9 @@ const Wrapper = styled.nav`
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
     cursor: pointer;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: auto auto 100px;
   }
 `;
 

@@ -5,7 +5,7 @@ import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
-  const { githubUser } = React.useContext(GithubContext);
+  const { githubUser, isDarkMode } = React.useContext(GithubContext);
   const { public_repos, followers, following, public_gists } = githubUser;
 
   const items = [
@@ -50,8 +50,14 @@ const UserInfo = () => {
 };
 
 const Item = ({ icon, label, value, color }) => {
+  const { isDarkMode } = React.useContext(GithubContext);
+  console.log(isDarkMode);
   return (
-    <article className="item">
+    <article
+      className={
+        isDarkMode ? "item dark-theme-compo  " : "item light-theme-compo"
+      }
+    >
       <span className={color}>{icon}</span>
       <div>
         <h3>{value}</h3>
@@ -68,10 +74,10 @@ const Wrapper = styled.section`
   @media (min-width: 640px) {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
+
   .item {
     border-radius: var(--radius);
     padding: 1rem 2rem;
-    background: var(--clr-white);
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 3rem;
@@ -83,6 +89,7 @@ const Wrapper = styled.section`
       place-items: center;
       border-radius: 50%;
     }
+
     .icon {
       font-size: 1.5rem;
     }

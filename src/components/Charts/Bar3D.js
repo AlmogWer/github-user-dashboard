@@ -1,7 +1,8 @@
 // STEP 1 - Include Dependencies
 // Include react
-import React from "react";
 
+import React from "react";
+import { GithubContext } from "../../context/context";
 // Include the react-fusioncharts component
 import ReactFC from "react-fusioncharts";
 
@@ -13,15 +14,14 @@ import Chart from "fusioncharts/fusioncharts.charts";
 
 // Include the theme as fusion
 import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
+import CandyTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 
 // Adding the chart and theme as dependency to the core fusioncharts
 ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 
-// STEP 2 - Chart Data
-
-// STEP 3 - Creating the JSON object to store the chart configurations
-
 const ChartComponent = ({ data }) => {
+  const { isDarkMode } = React.useContext(GithubContext);
+
   const chartConfigs = {
     type: "bar2d", // The chart type
     width: "100%", // Width of the chart
@@ -31,7 +31,7 @@ const ChartComponent = ({ data }) => {
       // Chart Configuration
       chart: {
         caption: "Most Forked",
-        theme: "fusion",
+        theme: `${isDarkMode ? "candy" : "fusion"}`,
         yAxisName: "Forks",
         xAxisName: "Repos",
         xAxisNameFontSize: "16px",

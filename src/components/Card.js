@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
+
 const Card = () => {
-  const { githubUser } = React.useContext(GithubContext);
+  const { githubUser, isDarkMode } = React.useContext(GithubContext);
   const {
     avatar_url,
     html_url,
@@ -15,7 +16,7 @@ const Card = () => {
     twitter_username,
   } = githubUser;
   return (
-    <Wrapper>
+    <Wrapper className={isDarkMode ? "dark-theme-compo " : null}>
       <header>
         <img src={avatar_url} alt={name} />
         <div>
@@ -42,12 +43,12 @@ const Card = () => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.article`
   background: var(--clr-white);
   padding: 1.5rem 2rem;
-  border-top-right-radius: var(--radius);
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius);
+  border-radius: var(--radius);
+
   position: relative;
   &::before {
     content: "user";
@@ -55,7 +56,7 @@ const Wrapper = styled.article`
     top: 0;
     left: 0;
     transform: translateY(-100%);
-    background: var(--clr-white);
+
     color: var(--clr-grey-5);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
