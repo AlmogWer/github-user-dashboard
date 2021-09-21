@@ -26,7 +26,7 @@ npm-start -g
 ## Links
 
 - [Repo](https://github.com/AlmogWer/quiz "Quiz Repo")
-- [Live](https://almogwer-github-user-dashboard.netlify.app/"Live View")
+- [Live](https://almogwer-github-user-dashboard.netlify.app/ "Live View")
 
 ## Screenshots & Animation
 
