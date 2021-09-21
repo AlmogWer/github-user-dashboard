@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
+    overflow: hidden;
   }
   /* align-items: start; */
 `;

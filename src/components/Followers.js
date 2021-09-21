@@ -98,5 +98,10 @@ const Wrapper = styled.article`
       color: var(--clr-grey-5);
     }
   }
+  @media (max-width: 500px) {
+    article {
+      width: 200px;
+    }
+  }
 `;
 export default Followers;

@@ -49,6 +49,7 @@ const Wrapper = styled.nav`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+
   h4 {
     margin-bottom: 0;
     font-weight: 400;
@@ -79,8 +80,25 @@ const Wrapper = styled.nav`
     color: var(--clr-white);
     transition: all 0.3s ease-in-out;
   }
-  @media (max-width: 800px) {
-    grid-template-columns: auto auto 100px;
+  @media (max-width: 550px) {
+    grid-template-columns: auto 100px auto;
+    grid-template-rows: 1fr 1fr;
+
+    .toggler {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      grid-column-end: 2;
+      justify-content: center;
+      margin: auto;
+    }
+    .btn {
+      grid-column-start: 3;
+      grid-row-start: 2;
+      margin: 0 auto;
+      justify-content: center;
+
+      grid-column-end: 3;
+    }
   }
 `;
 
