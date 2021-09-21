@@ -19,7 +19,7 @@ const GithubProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   //error
   const [error, setError] = useState({ show: false, msg: "" });
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const searchGithubUser = async (user) => {
     toggleError();
