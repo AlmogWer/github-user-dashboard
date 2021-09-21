@@ -1,5 +1,3 @@
-import { GoMailRead } from "react-icons/go";
-
 export default {
   login: "AlmogWer",
   id: 87434394,

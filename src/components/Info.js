@@ -5,7 +5,7 @@ import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 
 const UserInfo = () => {
-  const { githubUser, isDarkMode } = React.useContext(GithubContext);
+  const { githubUser } = React.useContext(GithubContext);
   const { public_repos, followers, following, public_gists } = githubUser;
 
   const items = [
@@ -51,7 +51,7 @@ const UserInfo = () => {
 
 const Item = ({ icon, label, value, color }) => {
   const { isDarkMode } = React.useContext(GithubContext);
-  console.log(isDarkMode);
+
   return (
     <article
       className={

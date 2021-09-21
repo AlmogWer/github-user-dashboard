@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { GithubContext } from "../context/context";
 import styled from "styled-components";
 import { MdBusiness, MdLocationOn, MdLink } from "react-icons/md";
@@ -16,7 +16,9 @@ const Card = () => {
     twitter_username,
   } = githubUser;
   return (
-    <Wrapper className={isDarkMode ? "dark-theme-compo " : null}>
+    <Wrapper
+      className={isDarkMode ? "dark-theme-compo " : "light-theme-compo "}
+    >
       <header>
         <img src={avatar_url} alt={name} />
         <div>

@@ -6,8 +6,7 @@ import DarkModeToggle from "react-dark-mode-toggle";
 
 const Navbar = () => {
   const { isDarkMode, toggleTheme } = React.useContext(GithubContext);
-  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
-    useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
   const isUser = isAuthenticated && user;
 
   return (
@@ -20,7 +19,7 @@ const Navbar = () => {
       )}
       {isUser ? (
         <button
-          className={isDarkMode ? "btn dark-theme" : "btn"}
+          className={isDarkMode ? "btn dark-theme" : "btn light-theme"}
           onClick={() => {
             logout({ returnTo: window.location.origin });
           }}
@@ -74,6 +73,11 @@ const Wrapper = styled.nav`
   }
   .btn.dark-theme {
     color: var(--clr-grey-1);
+    transition: all 0.3s ease-in-out;
+  }
+  .btn.light-theme {
+    color: var(--clr-white);
+    transition: all 0.3s ease-in-out;
   }
   @media (max-width: 800px) {
     grid-template-columns: auto auto 100px;

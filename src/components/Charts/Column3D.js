@@ -16,7 +16,7 @@ import FusionTheme from "fusioncharts/themes/fusioncharts.theme.fusion";
 import CandyTheme from "fusioncharts/themes/fusioncharts.theme.candy";
 
 // Adding the chart and theme as dependency to the core fusioncharts
-ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
+ReactFC.fcRoot(FusionCharts, Chart, FusionTheme, CandyTheme);
 
 // STEP 2 - Chart Data
 

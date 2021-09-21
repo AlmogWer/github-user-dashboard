@@ -40,7 +40,7 @@ const Search = () => {
             {requests > 0 && !isLoading && (
               <button
                 type="submit"
-                className={isDarkMode ? "dark-theme" : null}
+                className={isDarkMode ? "dark-theme" : "light-theme"}
               >
                 search
               </button>
@@ -97,6 +97,11 @@ const Wrapper = styled.div`
     }
     button.dark-theme {
       color: var(--clr-grey-1);
+      transition: all 0.3s ease-in-out;
+    }
+    button.light-theme {
+      color: var(--clr-white);
+      transition: all 0.3s ease-in-out;
     }
     svg {
       color: var(--clr-grey-5);
