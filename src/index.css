@@ -193,6 +193,15 @@ p {
   margin-top: 10rem;
   filter: hue-rotate(190deg);
 }
+.loading-img.dark-theme {
+  width: 20rem;
+  height: 20rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10rem;
+  filter: hue-rotate(190deg);
+}
+
 .loading-img1 {
   filter: hue-rotate(190deg);
 }

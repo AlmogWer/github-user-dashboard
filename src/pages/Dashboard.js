@@ -7,7 +7,7 @@ const Dashboard = () => {
     React.useContext(GithubContext);
   if (isLoading) {
     return (
-      <main>
+      <main className={isDarkMode ? "dark-theme" : "light-theme"}>
         <Navbar />
         <Search />
         <img src={loadingImage} className="loading-img" alt="loading" />

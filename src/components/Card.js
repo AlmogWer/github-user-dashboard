@@ -25,19 +25,19 @@ const Card = () => {
         </div>
         <a href={html_url}>follow</a>
       </header>
-      <p className="bio">{bio}</p>
+      <p className="bio">{bio || "No bio :("}</p>
       <div className="links">
         <p>
           <MdBusiness></MdBusiness>
-          {company}
+          {company || "No Company :("}
         </p>
         <p>
           <MdLocationOn></MdLocationOn>
           {location || "Earth"}
         </p>
-        <a href={`https://${blog}`}>
+        <a href={blog ? `https://${blog}` : "#"}>
           <MdLink></MdLink>
-          {blog}
+          {blog || "No blog :("}
         </a>
       </div>
     </Wrapper>
@@ -98,7 +98,7 @@ const Wrapper = styled.article`
     }
   }
   .bio {
-    color: var(--clr-grey-3);
+    color: var(--clr-grey-5);
   }
   .links {
     p,

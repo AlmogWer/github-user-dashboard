@@ -38,7 +38,12 @@ const Search = () => {
               onChange={(e) => setUser(e.target.value)}
             />
             {requests > 0 && !isLoading && (
-              <button type="submit">search</button>
+              <button
+                type="submit"
+                className={isDarkMode ? "dark-theme" : null}
+              >
+                search
+              </button>
             )}
           </div>
         </form>
@@ -90,7 +95,9 @@ const Wrapper = styled.div`
         color: var(--clr-primary-10);
       }
     }
-
+    button.dark-theme {
+      color: var(--clr-grey-1);
+    }
     svg {
       color: var(--clr-grey-5);
     }

@@ -20,6 +20,7 @@ const Navbar = () => {
       )}
       {isUser ? (
         <button
+          className={isDarkMode ? "btn dark-theme" : "btn"}
           onClick={() => {
             logout({ returnTo: window.location.origin });
           }}
@@ -65,8 +66,14 @@ const Wrapper = styled.nav`
     font-size: 1.2rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    color: var(--clr-white);
     cursor: pointer;
+  }
+  .btn {
+    background-color: var(--clr-primary-10);
+  }
+  .btn.dark-theme {
+    color: var(--clr-grey-1);
   }
   @media (max-width: 800px) {
     grid-template-columns: auto auto 100px;
