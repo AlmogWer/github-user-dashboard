@@ -27,6 +27,11 @@ npm-start -g
 
 - [Repo](https://github.com/AlmogWer/quiz "Quiz Repo")
 - [Live](https://almogwer-github-user-dashboard.netlify.app/ "Live View")
+- Dummy user
+```
+dummy@user.com
+Aadummyuser!
+```
 
 ## Screenshots & Animation
 
