@@ -103,6 +103,10 @@ const Wrapper = styled.div`
       color: var(--clr-white);
       transition: all 0.3s ease-in-out;
     }
+    button:hover.light-theme {
+      color: var(--clr-grey-1);
+      background: var(--clr-grey-9);
+    }
     svg {
       color: var(--clr-grey-5);
     }
