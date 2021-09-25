@@ -25,7 +25,7 @@ npm-start -g
 
 ## Links
 
-- [Repo](https://github.com/AlmogWer/quiz "Quiz Repo")
+- [Repo](https://github.com/AlmogWer/quiz "Github user dashboard Repo")
 - [Live](https://almogwer-github-user-dashboard.netlify.app/ "Live View")
 - Dummy user
 ```
